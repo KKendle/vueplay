@@ -9,7 +9,7 @@
     <body>
         <div id="shopping-list">
             <header>
-                <h1>{{header.toLocaleUpperCase()}}</h1>
+                <h1>{{header}}</h1>
                 <button v-if="state === 'default'" type="button" @click="changeState('edit')">Add Items</button>
                 <button v-else type="button" @click="changeState('default')">Cancel</button>
             </header>
