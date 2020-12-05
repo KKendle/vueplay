@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Vue Shopping List</title>
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <div id="shopping-list">
@@ -14,10 +15,12 @@
             </header>
             <div v-if="state === 'edit'">
                 <input type="text" v-model="newItem" @keyup.enter="saveItem">
-                <button type="button" @click="saveItem">Add New Item</button>
+                <button type="button" :disabled="!newItem.length" @click="saveItem">Add New Item</button>
             </div>
-            <ul>
-                <li v-for="item in items">{{item}}</li>
+            <ul class="shopping-list__items">
+                <li class="shopping-list__item" v-for="item in reversedItems" :class="{strikeout: item.purchased, 'high-priority': item.highPriority}" @click="togglePurchased(item)">
+                    <span>{{item.label}}</span>
+                </li>
             </ul>
             <p v-if="!items.length">Nice job you bought all your items!</p>
         </div>
@@ -31,19 +34,42 @@
                 header: "Shopping List App",
                 newItem: '',
                 items: [
-                    // "10 party hats",
-                    // "2 board games",
-                    // "20 cups"
+                    {
+                        label: "10 party hats",
+                        purchased: false,
+                        highPriority: false
+                    },
+                    {
+                        label: "2 board games",
+                        purchased: true,
+                        highPriority: false
+                    },
+                    {
+                        label: "20 cups",
+                        purchased: false,
+                        highPriority: true
+                    }
                 ],
+            },
+            computed: {
+                reversedItems() {
+                    return this.items.slice(0).reverse();
+                }
             },
             methods: {
                 saveItem: function() {
-                    this.items.push(this.newItem);
+                    this.items.push({
+                        label: this.newItem,
+                        purchased: false
+                    });
                     this.newItem = '';
                 },
                 changeState: function(newState) {
                     this.state = newState;
                     this.newItem = '';
+                },
+                togglePurchased: function(item) {
+                    item.purchased = !item.purchased;
                 }
             }
         });
