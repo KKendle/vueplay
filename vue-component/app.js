@@ -10,18 +10,21 @@ let PlanComponent = {
     }
 }
 
-Vue.component('plan-picker', {
+let PlanPicker = {
     template: '#plan-picker-template',
     components: {
-        plan: PlanComponent
+        'plan-component': PlanComponent
     },
     data() {
         return {
             plans: ['The Hacker', 'The Single', 'The Addict']
         }
     }
-})
+}
 
 new Vue({
-    el: '#app'
+    el: '#app',
+    components: {
+        'plan-picker': PlanPicker
+    }
 })
