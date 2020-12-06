@@ -9,6 +9,16 @@ let NotificationMessageTemplate = {
       type: String,
       required: true
     }
+  },
+  data() {
+    return {
+      isClosed: false
+    }
+  },
+  methods: {
+    closeNotification: function() {
+      this.isClosed = true
+    }
   }
 }
 
