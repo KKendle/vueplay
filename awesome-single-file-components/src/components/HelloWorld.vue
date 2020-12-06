@@ -6,11 +6,9 @@
 </template>
 
 <script>
-import BigYellowUsername from './BigYellowUsername.vue'
-
 export default {
   components: {
-    BigYellowUsername
+    BigYellowUsername: () => import(/* webpackChunkname: "BigYellowUsername" */'./BigYellowUsername.vue')
   },
   name: 'HelloWorld',
   props: {

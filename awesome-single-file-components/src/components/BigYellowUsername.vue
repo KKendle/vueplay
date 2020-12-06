@@ -1,5 +1,7 @@
-<template>
-  <p class="username">{{username}}</p>
+<template v-if="showUsername">
+  <div v-if="showUsername">
+    <p class="username">{{username}}</p>
+  </div>
 </template>
 
 <script>
@@ -8,6 +10,11 @@ export default {
     username: {
       type: String,
       required: true
+    }
+  },
+  data () {
+    return {
+      showUsername: false
     }
   }
 }
