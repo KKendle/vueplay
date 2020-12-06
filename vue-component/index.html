@@ -22,7 +22,7 @@
     </main>
 
     <footer>
-        <script type="text/x-template" id="plan-template">
+        <script type="text/x-template" id="plan-picker-item-template">
             <div class="plan" @click="select" :class="{'active-plan': isSelected}">
                 <div class="description">
                     <h3 class="title">{{name}}</h3>
@@ -32,7 +32,7 @@
 
         <script type="text/x-template" id="plan-picker-template">
             <div class="plans">
-                <plan-component v-for="plan in plans" :key="plan.id" :name="plan" @select="selectPlan" :selected-plan="selectedPlan"></plan-component>
+                <plan-picker-item v-for="plan in plans" :key="plan.id" :name="plan" @select="selectPlan" :selected-plan="selectedPlan"></plan-picker-item>
             </div>
         </script>
 
