@@ -13,25 +13,6 @@
     <main>
         <div id="app">
             <github-user-profile username="kkendle"></github-user-profile>
-
-            <div>
-                <h2>Required Pieces</h2>
-                <ul>
-                    <li>image</li>
-                    <li>name
-                        <ul>
-                            <li>link to profile page</li>
-                        </ul>
-                    </li>
-                    <li>join date</li>
-                    <li>bio description</li>
-                    <li>followers
-                        <ul>
-                            <li>link to followers list</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
         </div>
     </main>
 
@@ -39,17 +20,17 @@
         <script type="text/x-template" id="github-user-profile-template">
             <article class="card card--github">
                 <div class="card__img">
-                    <img src="" alt="">
+                    <img :src="user.avatar_url" :alt="user.name">
                 </div>
                 <h3 class="card__title">
-                    <a href="" target="_blank">{{username}}</a>
+                    <a :href="user.html_url" target="_blank">{{user.name}}</a>
                 </h3>
-                <div class="card__date">join date</div>
-                <div class="card__copy">
-                    <p>bio description</p>
+                <div class="card__date">joined on {{user.created_at}}</div>
+                <div class="card__copy" v-if="user.bio != null">
+                    <p>{{user.bio}}</p>
                 </div>
                 <div class="card__link">
-                    <a href="" target="_blank">followers</a>
+                    <a :href="user.followers_url" target="_blank">{{user.followers}} followers</a>
                 </div>
             </article>
         </script>

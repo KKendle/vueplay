@@ -6,17 +6,20 @@ let GithubUserProfile = {
       required: true
     }
   },
+  data() {
+    return {
+      user: {}
+    }
+  },
   created() {
-    axios.get('https://api.github.com/users/' + this.username)
-    .then(function (response) {
+    axios.get(`https://api.github.com/users/${this.username}`)
+    .then(response => {
       console.log(response);
+      this.user = response.data
     })
-    .catch(function (error) {
+    .catch(error => {
       console.log(error);
     })
-    .then(function () {
-      // always executed
-    });
   }
 }
 
