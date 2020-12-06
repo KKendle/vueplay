@@ -12,13 +12,26 @@
 
     <main>
         <div id="app">
-            <click-counter></click-counter>
+            <header>
+                <h2>Coffee Plans</h2>
+                <p>Choose the coffee for you.</p>
+            </header>
+
+            <div class="plans">
+                <plan-component name="The Hacker"></plan-component>
+                <plan-component name="The Curious"></plan-component>
+                <plan-component name="The Addict"></plan-component>
+            </div>
         </div>
     </main>
 
     <footer>
-        <script type="x-template" id="click-counter-template">
-            <button @click="count++">{{count}}</button>
+        <script type="text/x-template" id="plan-template">
+            <div class="plan">
+                <div class="description">
+                    <h3 class="title">{{name}}</h3>
+                </div>
+            </div>
         </script>
         <script src="https://unpkg.com/vue"></script>
         <script src="app.js"></script>

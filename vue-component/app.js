@@ -1,10 +1,6 @@
-Vue.component('click-counter', {
-    template: '#click-counter-template',
-    data() {
-        return {
-            count: 0
-        }
-    }
+Vue.component('plan-component', {
+    template: '#plan-template',
+    props: ['name']
 })
 
 new Vue({
