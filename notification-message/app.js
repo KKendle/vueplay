@@ -15,6 +15,11 @@ let NotificationMessageTemplate = {
       isClosed: false
     }
   },
+  computed: {
+    typeCapitalized() {
+      return `${this.type.slice(0,1).toUpperCase()}${this.type.slice(1)}`
+    }
+  },
   methods: {
     closeNotification: function() {
       this.isClosed = true

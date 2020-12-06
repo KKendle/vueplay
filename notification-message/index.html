@@ -36,7 +36,8 @@
             <div class="notification" v-if="!isClosed">
                 <button type="button" aria-label="Close Notification" @click="closeNotification">Close</button>
                 <div class="notification__heading">
-                    <span>{{this.type}}: </span>{{this.heading}}</div>
+                    <span>{{this.typeCapitalized}}: </span>{{this.heading}}
+                </div>
                 <div class="notification__copy">
                     <slot></slot>
                 </div>
