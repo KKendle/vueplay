@@ -1,5 +1,15 @@
 let NotificationMessageTemplate = {
-  template: '#notification-message-template'
+  template: '#notification-message-template',
+  props: {
+    type: {
+      type: String,
+      required: true
+    },
+    heading: {
+      type: String,
+      required: true
+    }
+  }
 }
 
 new Vue({
