@@ -18,9 +18,7 @@
             </header>
 
             <div class="plans">
-                <plan-component name="The Hacker"></plan-component>
-                <plan-component name="The Curious"></plan-component>
-                <plan-component name="The Addict"></plan-component>
+                <plan-component v-for="plan in plans" :name="plan"></plan-component>
             </div>
         </div>
     </main>

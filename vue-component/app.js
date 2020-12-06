@@ -4,5 +4,8 @@ Vue.component('plan-component', {
 })
 
 new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        plans: ['The Hacker', 'The Single', 'The Addict']
+    }
 })
