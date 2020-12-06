@@ -12,6 +12,7 @@
 
     <main>
         <div id="app">
+            <notification-message></notification-message>
 
             <div>
                 <h2>Required Pieces</h2>
@@ -26,6 +27,17 @@
     </main>
 
     <footer>
+        <script type="text/x-template" id="notification-message-template">
+            <div class="notification">
+                <button type="button" aria-label="Close Notification">Close</button>
+                <div class="notification__heading">
+                    <span>Notification type: </span>Notification message heading here</div>
+                <div class="notification__copy">
+                    <p>Notification message body here</p>
+                </div>
+            </div>
+        </script>
+
         <script src="https://unpkg.com/vue"></script>
         <script src="app.js"></script>
     </footer>

@@ -1,3 +1,10 @@
+let NotificationMessageTemplate = {
+  template: '#notification-message-template'
+}
+
 new Vue({
-  el: '#app'
+  el: '#app',
+  components: {
+    'notification-message': NotificationMessageTemplate
+  }
 })
