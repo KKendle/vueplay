@@ -1,13 +1,4 @@
-Vue.component('plan-picker', {
-    template: '#plan-picker-template',
-    data() {
-        return {
-            plans: ['The Hacker', 'The Single', 'The Addict']
-        }
-    }
-})
-
-Vue.component('plan-component', {
+let PlanComponent = {
     template: '#plan-template',
     props: {
         name: {
@@ -16,6 +7,18 @@ Vue.component('plan-component', {
             required: true
         },
         price: Number
+    }
+}
+
+Vue.component('plan-picker', {
+    template: '#plan-picker-template',
+    components: {
+        plan: PlanComponent
+    },
+    data() {
+        return {
+            plans: ['The Hacker', 'The Single', 'The Addict']
+        }
     }
 })
 
