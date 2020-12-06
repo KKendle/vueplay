@@ -6,17 +6,19 @@ let PlanComponent = {
             default: 'The Hacker',
             required: true
         },
-        price: Number
+        price: Number,
+        selectedPlan: {
+            type: String
+        }
     },
-    data() {
-        return {
-            selected: false
+    computed: {
+        isSelected() {
+            return this.name === this.selectedPlan
         }
     },
     methods: {
         select() {
             this.$emit('select', this.name)
-            this.selected = true
         }
     }
 }
@@ -28,7 +30,13 @@ let PlanPicker = {
     },
     data() {
         return {
-            plans: ['The Hacker', 'The Single', 'The Addict']
+            plans: ['The Hacker', 'The Single', 'The Addict'],
+            selectedPlan: null
+        }
+    },
+    methods: {
+        selectPlan(plan) {
+            this.selectedPlan = plan
         }
     }
 }
