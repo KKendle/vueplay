@@ -1,5 +1,11 @@
 let GithubUserProfile = {
-    template: '#github-user-profile-template'
+    template: '#github-user-profile-template',
+    props: {
+        username: {
+            type: String,
+            required: true
+        }
+    }
 }
 
 new Vue({
