@@ -12,7 +12,12 @@
 
     <main>
         <div id="app">
-            <notification-message type="info" heading="Good to know..."></notification-message>
+            <notification-message type="info" heading="Good to know...">
+                <p>Some thing to know</p>
+            </notification-message>
+            <notification-message type="success" heading="Order Complete">
+                <p>Cool, that went through!</p>
+            </notification-message>
 
             <div>
                 <h2>Required Pieces</h2>
@@ -33,7 +38,7 @@
                 <div class="notification__heading">
                     <span>{{this.type}}: </span>{{this.heading}}</div>
                 <div class="notification__copy">
-                    <p>Notification message body here</p>
+                    <slot></slot>
                 </div>
             </div>
         </script>
