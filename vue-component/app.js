@@ -1,6 +1,13 @@
 Vue.component('plan-component', {
     template: '#plan-template',
-    props: ['name']
+    props: {
+        name: {
+            type: String,
+            default: 'The Hacker',
+            required: true
+        },
+        price: Number
+    }
 })
 
 new Vue({
