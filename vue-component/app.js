@@ -7,6 +7,17 @@ let PlanComponent = {
             required: true
         },
         price: Number
+    },
+    data() {
+        return {
+            selected: false
+        }
+    },
+    methods: {
+        select() {
+            this.$emit('select', this.name)
+            this.selected = true
+        }
     }
 }
 

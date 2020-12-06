@@ -23,7 +23,7 @@
 
     <footer>
         <script type="text/x-template" id="plan-template">
-            <div class="plan">
+            <div class="plan" @click="select" :class="{'active-plan': selected}">
                 <div class="description">
                     <h3 class="title">{{name}}</h3>
                 </div>
